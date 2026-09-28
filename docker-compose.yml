@@ -15,5 +15,37 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
+    networks:
+      - reservas-network
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d reservas_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  api:
+    build: ./app
+    container_name: prova-api
+    restart: unless-stopped
+
+    ports:
+      - "3000:3000"
+
+    env_file:
+      - ./app/.env
+
+    networks:
+      - reservas-network
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+networks:
+  reservas-network:
+    driver: bridge
+
 volumes:
   postgres_data:
