@@ -1,0 +1,95 @@
+﻿docker :  Image prova-primeiro-bimestre-devops-api Building 
+No linha:1 caractere:56
++ ... e-devops" ; docker compose -f "c:\Users\Desktop\prova-primeiro-bimest ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ( Image prova-pr...s-api Building :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+#1 [internal] load local bake definitions
+#1 reading from stdin 621B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 872B 0.0s done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/node:20-alpine
+#3 DONE 0.9s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 34B done
+#4 DONE 0.0s
+
+#5 [deps 1/4] FROM docker.io/library/node:20-alpine@sha256:fb4cd12c85ee03686f6af5362a0b0d56d50c58a04632e6c0fb8363f609372293
+#5 resolve docker.io/library/node:20-alpine@sha256:fb4cd12c85ee03686f6af5362a0b0d56d50c58a04632e6c0fb8363f609372293 0.0s done
+#5 CACHED
+
+#6 [deps 2/4] WORKDIR /app
+#6 CACHED
+
+#7 [internal] load build context
+#7 transferring context: 659B done
+#7 DONE 0.0s
+
+#8 [deps 3/4] COPY package.json package-lock.json ./
+#8 DONE 0.1s
+
+#9 [runner 2/7] RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+#9 DONE 0.6s
+
+#10 [deps 4/4] RUN npm ci --omit=dev
+#10 ...
+
+#11 [runner 3/7] WORKDIR /app
+#11 DONE 0.1s
+
+#10 [deps 4/4] RUN npm ci --omit=dev
+#10 2.375 npm warn deprecated dottie@2.0.7: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+#10 2.625 npm warn deprecated uuid@8.3.2: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
+#10 3.394 
+#10 3.394 added 103 packages, and audited 104 packages in 3s
+#10 3.394 
+#10 3.394 30 packages are looking for funding
+#10 3.394   run `npm fund` for details
+#10 3.400 
+#10 3.400 2 moderate severity vulnerabilities
+#10 3.400 
+#10 3.400 To address all issues (including breaking changes), run:
+#10 3.400   npm audit fix --force
+#10 3.400 
+#10 3.400 Run `npm audit` for details.
+#10 3.402 npm notice
+#10 3.402 npm notice New major version of npm available! 10.8.2 -> 12.1.0
+#10 3.402 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.1.0
+#10 3.402 npm notice To update run: npm install -g npm@12.1.0
+#10 3.402 npm notice
+#10 DONE 3.6s
+
+#12 [runner 4/7] COPY --from=deps /app/node_modules ./node_modules
+#12 DONE 0.8s
+
+#13 [runner 5/7] COPY src ./src
+#13 DONE 0.1s
+
+#14 [runner 6/7] COPY package.json ./
+#14 DONE 0.1s
+
+#15 [runner 7/7] RUN chown -R appuser:appgroup /app
+#15 DONE 12.2s
+
+#16 exporting to image
+#16 exporting layers
+#16 exporting layers 0.8s done
+#16 exporting manifest sha256:a528ce6c3008441d886793c4afe07a66d8c8f67705ae8921ad6624aec9ef80df 0.0s done
+#16 exporting config sha256:ee9c3590ff20578672e81449eade650de296c46acb6927987afa2fb5f9836b96 0.0s done
+#16 exporting attestation manifest sha256:ca2db53ff202023597cdcbc998c51449b3757ad0d9a8491b8c47e8cd5637bd3b 0.0s done
+#16 exporting manifest list sha256:4e207d46bda9b0f7497c150799d5c31c6f3f34a0e90e293cffd55b74e53b001d
+#16 exporting manifest list sha256:4e207d46bda9b0f7497c150799d5c31c6f3f34a0e90e293cffd55b74e53b001d 0.0s done
+#16 naming to docker.io/library/prova-primeiro-bimestre-devops-api:latest done
+#16 unpacking to docker.io/library/prova-primeiro-bimestre-devops-api:latest
+#16 unpacking to docker.io/library/prova-primeiro-bimestre-devops-api:latest 1.8s done
+#16 DONE 2.8s
+
+#17 resolving provenance for metadata file
+#17 DONE 0.0s
+ Image prova-primeiro-bimestre-devops-api Built 

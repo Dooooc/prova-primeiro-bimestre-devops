@@ -1,3 +1,16 @@
 node_modules/
 .env
-*.logcd
+*.log
+
+# Terraform
+**/.terraform/
+**/*.tfstate
+**/*.tfstate.*
+**/.terraform.lock.hcl
+
+# tfvars pode conter senhas — não versionar
+infra/terraform.tfvars
+
+# Credenciais AWS
+infra/aws-creds.sh
+infra/aws-creds.ps1
